@@ -39,6 +39,11 @@ var/datum/subsystem/lighting/SSlighting
 	if (!resumed)
 		changed_lights_workload = MC_AVERAGE(changed_lights_workload, changed_lights.len)
 	var/i = 1
+
+	if(!istype(SSlighting.changed_lights))
+		SSlighting.changed_lights = list()
+
+
 	while (i <= changed_lights.len)
 		var/datum/light_source/LS = changed_lights[i++]
 		LS.check()
@@ -68,6 +73,9 @@ var/datum/subsystem/lighting/SSlighting
 		for(var/area/A in world)
 			if (A.lighting_use_dynamic == DYNAMIC_LIGHTING_IFSTARLIGHT)
 				A.luminosity = 0
+
+	if(!istype(SSlighting.changed_lights))
+		SSlighting.changed_lights = list()
 
 	for(var/thing in changed_lights)
 		var/datum/light_source/LS = thing
