@@ -1,0 +1,16 @@
+{
+	"eslint.workingDirectories": [
+		"./tgui"
+	],
+
+	"workbench.editorAssociations": [
+		{
+			"filenamePattern": "*.dmi",
+			"viewType": "imagePreview.previewEditor"
+		}
+	],
+
+	"files.eol": "\n",
+
+	"gitlens.advanced.blame.customArguments": ["-w"]
+}
