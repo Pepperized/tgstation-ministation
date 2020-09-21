@@ -92,7 +92,7 @@
 		SSlighting.changed_lights |= src
 
 //Remove current effect
-/datum/light_source/proc/remove_effect().
+/datum/light_source/proc/remove_effect()
 	for(var/turf/T in effect)
 		LAZYREMOVE(T.affecting_lights, src)
 		T.update_lumcount(-effect[T], mode)

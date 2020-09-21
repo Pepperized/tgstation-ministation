@@ -16,19 +16,19 @@ endmap
 map tgstation2
 	friendlyname Box Station
 	default
-	#voteweight 1.5
+	#voteweight 0
 endmap
 
 map metastation
 	friendlyname Meta Station
 	minplayers 25
-	#voteweight 0.5
+	#voteweight 0
 endmap
 
 #map ministation
 	friendlyname Mini Station
 	maxplayers 30
-	voteweight 0
+	voteweight 1
 endmap
 
 map birdstation

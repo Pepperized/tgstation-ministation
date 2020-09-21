@@ -369,36 +369,3 @@
 	materials = list(MAT_METAL=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
-
-/datum/design/mech_sleeper
-	name = "Exosuit Medical Equipment (Mounted Sleeper)"
-	desc = "Equipment for medical exosuits. A mounted sleeper that stabilizes patients and can inject reagents in the exosuit's reserves."
-	id = "mech_sleeper"
-	build_type = MECHFAB
-	req_tech = list("biotech" = 3, "engineering" = 3, "plasmatech" = 2)
-	build_path = /obj/item/mecha_parts/mecha_equipment/medical/sleeper
-	materials = list(MAT_METAL=5000,MAT_GLASS=10000)
-	construction_time = 100
-	category = list("Exosuit Equipment")
-
-/datum/design/mech_syringe_gun
-	name = "Exosuit Medical Equipment (Syringe Gun)"
-	desc = "Equipment for medical exosuits. A chem synthesizer with syringe gun. Reagents inside are held in stasis, so no reactions will occur."
-	id = "mech_syringe_gun"
-	build_type = MECHFAB
-	req_tech = list("magnets" = 4,"biotech" = 4, "combat" = 3, "materials" = 4)
-	build_path = /obj/item/mecha_parts/mecha_equipment/medical/syringe_gun
-	materials = list(MAT_METAL=3000,MAT_GLASS=2000)
-	construction_time = 200
-	category = list("Exosuit Equipment")
-
-/datum/design/mech_medical_beamgun
-	name = "Exosuit Medical Equipment (Medical Beamgun)"
-	desc = "Equipment for medical exosuits. A mounted medical nanite projector which will treat patients with a focused beam."
-	id = "mech_medi_beam"
-	req_tech = list("engineering" = 6, "materials" = 7, "powerstorage" = 5, "biotech" = 6)
-	build_type = MECHFAB
-	materials = list(MAT_METAL = 15000, MAT_GLASS = 8000, MAT_PLASMA = 3000, MAT_GOLD = 8000, MAT_DIAMOND = 2000)
-	construction_time = 250
-	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
-	category = list("Exosuit Equipment")
