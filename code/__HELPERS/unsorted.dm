@@ -35,7 +35,7 @@
 	dx=(32*end.x+end.pixel_x)-(32*start.x+start.pixel_x)
 	if(!dy)
 		return (dx>=0)?90:270
-	.=arctan(dx/dy)
+	.=arctan2(dx/dy)
 	if(dy<0)
 		.+=180
 	else if(dx<0)
@@ -495,7 +495,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 	var/y = min(world.maxy, max(1, A.y + dy))
 	return locate(x,y,A.z)
 
-/proc/arctan(x)
+/proc/arctan2(x)
 	var/y=arcsin(x/sqrt(1+x*x))
 	return y
 
