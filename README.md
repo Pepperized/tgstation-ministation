@@ -1,12 +1,9 @@
-##/tg/station v1.0.1
-
-[![Build Status](https://travis-ci.org/tgstation/tgstation.png)](https://travis-ci.org/tgstation/tgstation)
-
+##ministation for /tg/station
 
 **Website:** http://www.tgstation13.org <BR>
-**Code:** https://github.com/tgstation/tgstation <BR>
+**Code:** https://github.com/Pepperized/tgstation-ministation <BR>
+**Based On:** https://github.com/tgstation/tgstation
 **Wiki** http://tgstation13.org/wiki/Main_Page <BR>
-**IRC:** irc://irc.rizon.net/coderbus or if you dont have an IRC client, you can click  [here](https://kiwiirc.com/client/irc.rizon.net:6667/?&theme=cli#coderbus).<BR>
 
 
 ##DOWNLOADING
@@ -42,10 +39,6 @@ saving tgstation.dmb (DEBUG mode)
 tgstation.dmb - 0 errors, 0 warnings
 ```
 
-If you see any errors or warnings, something has gone wrong - possibly a corrupt
-download or the files extracted wrong. If problems persist, ask for assistance
-in irc://irc.rizon.net/coderbus
-
 Once that's done, open up the config folder.  You'll want to edit config.txt to
 set the probabilities for different gamemodes in Secret and to set your server
 location so that all your players don't get disconnected at the end of each
@@ -73,44 +66,13 @@ specified in the config.txt, and set the Security box to 'Safe'.  Then press GO
 and the server should start up and be ready to join. It is also recommended that
 you set up the SQL backend (see below).
 
-##UPDATING
-
-To update an existing installation, first back up your /config and /data folders
-as these store your server configuration, player preferences and banlist.
-
-Then, extract the new files (preferably into a clean directory, but updating in
-place should work fine), copy your /config and /data folders back into the new
-install, overwriting when prompted except if we've specified otherwise, and
-recompile the game.  Once you start the server up again, you should be running
-the new version.
-
 ##MAPS
 
 /tg/station currently comes equipped with seven maps.
 
-* [tgstation2 (default)](http://tgstation13.org/wiki/Boxstation)
-* [MetaStation](https://tgstation13.org/wiki/MetaStation)
 * [MiniStation](http://tgstation13.org/wiki/MiniStation)
-* [AsteroidStation](https://tgstation13.org/wiki/AsteroidStation)
-* [BirdStation](https://tgstation13.org/wiki/BirdStation)
-* [DreamStation](https://tgstation13.org/wiki/Dreamstation)
-* [EfficiencyStation](https://tgstation13.org/wiki/Efficiency_Station)
 
-All maps have their own code file that is in the base of the _maps directory. Instead of loading the map directly we instead use a code file to include the map and then include any other code changes that are needed for it; for example MiniStation changes the uplink items for the map. Follow this guideline when adding your own map, to your fork, for easy compatibility.
-
-If you want to load a different map, just open the corresponding map's code file in Dream Maker, make sure all of the other map code files are unticked in the file tree, in the left side of the screen, and then make sure the map code file you want is ticked.
-
-If you are hosting a server, and want randomly picked maps to be played each round, you can enable map rotation in [config.txt](config/config.txt) and then set the maps to be picked in the [maps.txt](config/maps.txt) file.
-
-Anytime you want to make changes to a map it's imperative you use the [Map Merging tools](http://tgstation13.org/wiki/Map_Merger)
-
-##AWAY MISSIONS
-
-/tg/station supports loading away missions however they are disabled by default.
-
-Map files for away missions are located in the _maps/RandomZLevels directory. Each away mission includes it's own code definitions located in /code/modules/awaymissions/mission_code. These files must be included and compiled with the server beforehand otherwise the server will crash upon trying to load away missions that lack their code.
-
-To enable an away mission open `config/awaymissionconfig.txt` and uncomment one of the .dmm lines by removing the #. If more than one away mission is uncommented then the away mission loader will randomly select one the enabled ones to load.
+Although maps other than MiniStation exist in this repo, the purpose of the repo is to maintain MiniStation as best as possible.
 
 ##SQL SETUP
 
@@ -121,11 +83,9 @@ The SQL backend requires a MySQL server. SQL is required for the library, stats 
 Included in the repository is a python3 compatible IRC bot capable of relaying adminhelps to a specified
 IRC channel/server, see the /bot folder for more
 
-##CONTRIBUTING
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md)
-
 ##LICENSE
+
+As this repo is forked from tgstation, the following license information applies:
 
 All code after commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST (https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under GNU AGPL v3 (http://www.gnu.org/licenses/agpl-3.0.html).
 
