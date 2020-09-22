@@ -1,8 +1,12 @@
 ##ministation for /tg/station
 
+The goal here is to make the lowpop (5-20 players) map MiniStation that was removed from tgstations code to work with modern BYOND.
+I currently don't plan to bring the codebase up to date with tgstations main repo, and I have taken a lazy, destructive approach to 
+incompatibilities (e.g. removing a feature that fails to compile). Many bugs are likely there, but it does work.
+
 **Website:** http://www.tgstation13.org <BR>
 **Code:** https://github.com/Pepperized/tgstation-ministation <BR>
-**Based On:** https://github.com/tgstation/tgstation
+**Based On:** https://github.com/tgstation/tgstation <BR>
 **Wiki** http://tgstation13.org/wiki/Main_Page <BR>
 
 
