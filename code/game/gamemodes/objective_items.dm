@@ -17,29 +17,11 @@
 	difficulty = 5
 	excludefromjob = list("Captain")
 
-/datum/objective_item/steal/hoslaser
-	name = "the head of security's personal laser gun"
-	targetitem = /obj/item/weapon/gun/energy/e_gun/hos
-	difficulty = 10
-	excludefromjob = list("Head Of Security")
-
 /datum/objective_item/steal/handtele
 	name = "a hand teleporter"
 	targetitem = /obj/item/weapon/hand_tele
 	difficulty = 5
 	excludefromjob = list("Captain")
-
-/datum/objective_item/steal/jetpack
-	name = "the Captain's jetpack"
-	targetitem = /obj/item/weapon/tank/jetpack/oxygen/captain
-	difficulty = 5
-	excludefromjob = list("Captain")
-
-/datum/objective_item/steal/magboots
-	name = "the chief engineer's advanced magnetic boots"
-	targetitem =  /obj/item/clothing/shoes/magboots/advance
-	difficulty = 5
-	excludefromjob = list("Chief Engineer")
 
 /datum/objective_item/steal/capmedal
 	name = "the medal of captaincy"
@@ -76,11 +58,6 @@
 	targetitem = /obj/item/documents //Any set of secret documents. Doesn't have to be NT's
 	difficulty = 5
 
-/datum/objective_item/steal/nuke_core
-	name = "the heavily radioactive plutonium core from the onboard self-destruct. Take care to wear the proper safety equipment when extracting the core"
-	targetitem = /obj/item/nuke_core
-	difficulty = 15
-
 /datum/objective_item/steal/nuke_core/New()
 	special_equipment += /obj/item/weapon/storage/box/syndie_kit/nuke
 
@@ -97,22 +74,10 @@
 	found_amount += T.air_contents.gases["plasma"] ? T.air_contents.gases["plasma"][MOLES] : 0
 	return found_amount>=target_amount
 
-
-/datum/objective_item/steal/functionalai
-	name = "a functional AI"
-	targetitem = /obj/item/device/aicard
-	difficulty = 20 //beyond the impossible
-
-/datum/objective_item/steal/functionalai/check_special_completion(obj/item/device/aicard/C)
-	for(var/mob/living/silicon/ai/A in C)
-		if(isAI(A) && A.stat != 2) //See if any AI's are alive inside that card.
-			return 1
-	return 0
-
 /datum/objective_item/steal/blueprints
 	name = "the station blueprints"
 	targetitem = /obj/item/areaeditor/blueprints
-	difficulty = 10
+	difficulty = 3
 	excludefromjob = list("Chief Engineer")
 	altitems = list(/obj/item/weapon/photo)
 
@@ -182,32 +147,3 @@
 	name = "a piece of corgi meat"
 	targetitem = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/corgi
 	difficulty = 5
-
-//Stack objectives get their own subtype
-/datum/objective_item/stack
-	name = "5 cardboards"
-	targetitem = /obj/item/stack/sheet/cardboard
-	difficulty = 9001
-
-/datum/objective_item/stack/check_special_completion(obj/item/stack/S)
-	var/target_amount = text2num(name)
-	var/found_amount = 0
-
-	if(istype(S, targetitem))
-		found_amount = S.amount
-	return found_amount>=target_amount
-
-/datum/objective_item/stack/diamond
-	name = "10 diamonds"
-	targetitem = /obj/item/stack/sheet/mineral/diamond
-	difficulty = 10
-
-/datum/objective_item/stack/gold
-	name = "50 gold bars"
-	targetitem = /obj/item/stack/sheet/mineral/gold
-	difficulty = 15
-
-/datum/objective_item/stack/uranium
-	name = "25 refined uranium bars"
-	targetitem = /obj/item/stack/sheet/mineral/uranium
-	difficulty = 10
