@@ -531,7 +531,6 @@ var/global/list/possible_items_special = list()
 	..()
 	if(!possible_items_special.len)
 		init_subtypes(/datum/objective_item/special,possible_items)
-		init_subtypes(/datum/objective_item/stack,possible_items)
 
 /datum/objective/steal/special/find_target()
 	return set_target(pick(possible_items_special))
